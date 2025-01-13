@@ -63,7 +63,6 @@ def drawTitleScreen(app):
     drawRect(0, 0, app.width, app.height, fill='black')
     logosize = (0.125)*app.width
     drawLogo(app, app.cx, (1/7)*app.height, logosize)
-    drawImages(app)
     if app.loadbar < (5/8*app.width):
         drawLoadingBar(app)
     if app.loadbar >= (5/8)*app.width:
@@ -74,40 +73,6 @@ def drawTitleScreen(app):
                  border='green', borderWidth=5)
         drawLabel('Track Portfolio Performance', 650, (13/16)*app.height, 
                   size=16, fill='white')
-
-def drawImages(app):
-    aapl = Image.open(os.path.join('images', 'aaple.png'))
-    #https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed3d547-94ff-48e1-9f20-8c14a7030a02_2000x2000.jpeg
-    amzn = Image.open(os.path.join('images', 'amazon.png'))
-    #https://www.coolest-gadgets.com/wp-content/uploads/2024/11/Amazon-Statistics-1.jpg
-    brkb = Image.open(os.path.join('images', 'brkb.png'))
-    #https://trading212equities.s3.eu-central-1.amazonaws.com/BRK_B_US_EQ.png
-    avgo = Image.open(os.path.join('images', 'broadcom.png'))
-    #https://pbs.twimg.com/profile_images/784468765027110912/tavuddvl_400x400.jpg
-    lly = Image.open(os.path.join('images', 'elililly.png'))
-    #https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eli_Lilly_and_Company.svg/1200px-Eli_Lilly_and_Company.svg.png
-    jpm = Image.open(os.path.join('images', 'jpmc.png'))
-    #https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448474469_873092761527077_572458202132572966_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=nRhv3b49dX4Q7kNvgHJEOjY&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=Aesm1Td9Mfy_gAYtuevy4sM&oh=00_AYDFuoulWnHuiGDo2UBhCRdAK3TacNBZgZRY2Tzgp4WLFQ&oe=6757C5E3
-    msft = Image.open(os.path.join('images', 'microsoft.png'))
-    #https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png
-    tsla = Image.open(os.path.join('images', 'tesla.png'))
-    #https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/1200px-Tesla_logo.png
-    apple = CMUImage(aapl)
-    amazon = CMUImage(amzn)
-    berkHath = CMUImage(brkb)
-    broadcom = CMUImage(avgo)
-    elililly = CMUImage(lly)
-    jpmorgan = CMUImage(jpm)
-    microsoft = CMUImage(msft)
-    tesla = CMUImage(tsla)
-    drawImage(apple, 200, 300, width=150, height=150, align='center')
-    drawImage(amazon, 400, 300, width=225, height=150,align='center')
-    drawImage(berkHath, 600, 300, width=150, height=150,align='center')
-    drawImage(broadcom, 800, 300, width=150, height=150,align='center')
-    drawImage(elililly, 200, 480, width=200, height=150,align='center')
-    drawImage(jpmorgan, 400, 480, width=225, height=225,align='center')
-    drawImage(microsoft, 600, 480, width=275, height=150,align='center')
-    drawImage(tesla, 800, 480, width=150, height=150,align='center')
 
 def drawLogo(app, cx, cy, size):
     textCenter = cx+size - (15/35)*size
